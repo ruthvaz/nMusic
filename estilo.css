@@ -232,6 +232,19 @@ label[for="bt_menu"]{
     background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
 }
 
+/* Achar bandas */
+
+#bandas {
+    text-align: center;
+    width: 70%;
+    margin: 2% auto;
+    padding: 1%;
+}
+
+#banda {
+    margin-bottom: 2%;
+}
+
 @media(max-width:800px){
     
     label[for="bt_menu"]{
