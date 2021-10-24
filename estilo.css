@@ -118,6 +118,42 @@ label[for="bt_menu"]{
 
 /* Tabela de artista */
 
+.table-artista {
+    margin: 2% 2%;
+    width: 96%;
+}
+
+.table-artista tr {
+    background: linear-gradient(to left, #8e2de2, #4a00e0);
+}
+
+.table-artista tr td {
+    width: 80%;
+    text-align: center;
+    padding: .8%;
+    border-radius: 0 10px 10px 0;
+    
+}
+
+.table-artista tr td:first-child {
+    width: 20%;
+    border-radius: 10px 0 0 10px;
+}
+
+.table-artista tr td img {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.table-artista tr td a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 26px;
+    color: white;
+    text-decoration: none;
+}
+
 @media(max-width:800px){
     
     label[for="bt_menu"]{
