@@ -112,8 +112,6 @@ function exibe(vetor) {
 
     var fullscreem = document.createAttribute("allowfullscreen");
     tag.setAttributeNode(fullscreem);
-
-    // var <iframe width="853" height="480" src="https://www.youtube.com/embed/1w7OgIMMRc4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     
     video.appendChild(tag);
 
