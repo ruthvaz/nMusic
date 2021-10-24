@@ -154,6 +154,84 @@ label[for="bt_menu"]{
     text-decoration: none;
 }
 
+/* Tabela contatos */
+
+.table-contatos {
+    margin: 2% 2%;
+    width: 96%;
+}
+
+.table-contatos tr {
+    background: linear-gradient(-90deg, #FC466B 0%, #3F5EFB 100%);
+}
+
+.table-contatos tr td {
+    width: 25%;
+    text-align: center;
+    padding: .8%;    
+}
+
+.table-contatos tr td:first-child {
+    border-radius: 10px 0 0 10px;
+}
+
+.table-contatos tr td:last-child {
+    border-radius: 0 10px 10px 0;
+}
+
+.table-contatos tr td img {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+}
+
+.table-contatos tr td a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 26px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Formulário de cadastro */
+
+#form-cadastro {
+    text-align: center;
+    width: 70%;
+    margin: 2% auto;
+    padding: 1%;
+    background: linear-gradient(-90deg, #FC466B 0%, #3F5EFB 100%);
+    border-radius: 20px;
+}
+
+#form-cadastro input {
+    width: 60%;
+    margin: 0 auto 1% auto;
+    padding: 1%;
+    background: none;
+    color: white;
+    border: none;
+    border-bottom: 2px solid #0dca55;
+}
+
+#form-cadastro input::placeholder {
+    color: white;
+}
+
+#form-cadastro input:focus {
+    border: none;
+}
+
+#form-cadastro button {
+    width: 50%;
+    margin: 2% 0;
+    padding: 1%;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 22px;
+    background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
+}
+
 @media(max-width:800px){
     
     label[for="bt_menu"]{
