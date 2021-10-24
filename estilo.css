@@ -2,20 +2,34 @@
     margin: 0;
     padding: 0;
 }
+
+#bg-index {
+    background: url(img/bg.jpg) fixed bottom;
+    background-size: cover;
+}
+
+.bg2 {
+    background: url(img/bg2.jpg) fixed top;
+    background-size: cover;
+}
+
 .menu{
     width: 100%;
     height: 50px;
     background-color: #0f0f0f;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 .menu ul{
     list-style: none;
     position: relative;
 }
+
 .menu ul li{
     width: 150px;
     float: left;
 }
+
 .menu a{
     padding: 15px;
     display: block;
@@ -24,24 +38,30 @@
     background-color: #0f0f0f;
     color: blueviolet;
 }
+
 .menu ul ul{
     position: absolute;
     visibility: hidden;
 }
+
 .menu ul li:hover ul{
     visibility: visible;
 }
+
 .menu a:hover{
     background-color: #02041c;
     color: #01594f;
 }
+
 .menu ul ul li{
     float: none;
     border-bottom: solid 3px #02041c; 
 }
+
 .menu ul ul li a{
     background-color: #080838;
 }
+
 label[for="bt_menu"]{
     padding: 4px;
     background-color: #312c2c;
@@ -53,36 +73,82 @@ label[for="bt_menu"]{
     width: 25px;
     height: 25px;
 }
+
 #bt_menu{
     display: none;
 }
+
 label[for="bt_menu"]{
     display: none;
 }
+
+/* Tabela de generos */
+
+.table-genero {
+    margin: 2% 2%;
+    width: 96%;
+}
+
+.table-genero tr {
+    background: linear-gradient(to left, #8e2de2, #4a00e0);
+}
+
+.table-genero tr td {
+    width: 50%;
+    text-align: center;
+    padding: .8%;
+    border-radius: 0 10px 10px 0;
+    
+}
+
+.table-genero tr td:first-child {
+    border-radius: 10px 0 0 10px;
+}
+
+.table-genero tr td img {
+    height: 100%;
+}
+
+.table-genero tr td a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 26px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Tabela de artista */
+
 @media(max-width:800px){
+    
     label[for="bt_menu"]{
         display: block;
     }
+
     #bt_menu:checked ~ .menu{
         margin-left: 0;
     }
+
     .menu{
         margin-top: 2px;
         margin-left: -100%;
         transition: all .4s;
     }
+
     .menu ul li{
         width: 100%;
         float: none;
     }
+
     .menu ul ul{
         position: static;
         overflow: hidden;
         max-height: 0;
         transition: all .4s;
     }
+    
     .menu ul li:hover ul{
         height: auto;
         max-height: 200px;
     }
+
 }
