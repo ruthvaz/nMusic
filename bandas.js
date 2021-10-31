@@ -51,7 +51,7 @@ function mostra() {
 
     if(opcao == "rock") {
         for(var i = 0; i < bandas[0].length; i++) {
-            if( (ano - bandas[0][i].inicio) > 30 && idade > 20) {
+            if( (ano - bandas[0][i].inicio) >= 30 && idade >= 20) {
                 exibe(bandas[0][i]);
             } 
             if( (ano - bandas[0][i].inicio) < 30 && idade < 20) {
@@ -60,7 +60,7 @@ function mostra() {
         }
     } else if(opcao == "pop") {
         for(var i = 0; i < bandas[1].length; i++) {
-            if( (ano - bandas[1][i].inicio) > 30 && idade > 20) {
+            if( (ano - bandas[1][i].inicio) >= 30 && idade >= 20) {
                 exibe(bandas[1][i]);
             }
             if( (ano - bandas[1][i].inicio) < 30 && idade < 20) {
@@ -69,7 +69,7 @@ function mostra() {
         }
     } else {
         for(var i = 0; i < bandas[2].length; i++) {
-            if( (ano - bandas[2][i].inicio) > 30 && idade > 20) {
+            if( (ano - bandas[2][i].inicio) >= 30 && idade >= 20) {
                 exibe(bandas[2][i]);
             }
             if( (ano - bandas[2][i].inicio) < 30 && idade < 20) {

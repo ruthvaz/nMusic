@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora</title>
+</head>
+<body>
+
+    <script>
+        document.body.innerHTML = '<input id=entrada><br><p id=resultado>';
+        var entrada = document.getElementById('entrada');
+        var resultado = document.getElementById('resultado');
+        entrada.addEventListener('keydown', function(event) {if (event.key == "Enter") {resultado.innerHTML = eval(entrada.value);} });
+    </script>
+
+<p>Esse programa calcula as operações matemáticas. A seguir os símbolos das operações : adição (+), subtração (-), multipicação (*), divisão (/).<br>
+     Basta colocar a conta que deseja e apertar Enter.</p>    
+
+</body>
+</html>

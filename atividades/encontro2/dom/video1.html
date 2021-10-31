@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body> <!--onload="funcao()"-->
+    
+    <!--<p id="demo"></p>
+    <p class="exemplo"></p>
+    <p class="exemplo"></p>
+    <p class="exemplo"></p>
+    <div class="exemplo"></div>
+    <img id="imagem" src="imagem.jpg" alt="Imagem01">
+    <p id="demo">Texto</p>
+    <h1 onclick="this.innerHTML = 'Bem-mandado!'">Clique aqui!</h1>
+    <h1 onclick="funcao(this)">Clique aqui!</h1>
+    <h1 id="demo">Clique aqui!</h1>-->
+
+    <!--<select name="" id="demo" onchange="funcao()">
+        <option value="opcao1">opção 1</option>
+        <option value="opcao2">opção 2</option>
+        <option value="opcao3">opção 3</option>
+    </select>-->
+
+    <!--<input type="text" id="demo" onchange="funcao()">-->
+
+    <h1 id="demo" onmouseover="funcao1(this)" onmouseout="funcao2(this)">Passe o mouse aqui!</h1>
+
+    <script>
+        /*document.getElementById('demo').innerHTML = 'Texto';
+        console.log(document.getElementsByTagName('p'));
+        console.log(document.getElementsByClassName('exemplo'));
+        var x = document.getElementsByClassName('exemplo');
+        x[0].innerHTML = 'Texto 0';
+        x[1].innerHTML = 'Texto 1';
+        x[2].innerHTML = 'Texto 2';
+        var x = document.querySelectorAll('p.exemplo');
+        console.log(x);
+        var x = document.querySelectorAll('div.exemplo');
+        console.log(x);
+        document.write('Teste');
+        document.getElementById('imagem').alt = "Imagem02";
+        document.getElementById('demo').style.color = 'purple';
+
+        function funcao(elemento){
+            elemento.innerHTML = 'Obrigado!';
+        }
+        document.getElementById('demo').onclick = funcao;
+
+        function funcao(){
+            document.getElementById('demo').innerHTML = 'Thanks!';
+        }
+        document.getElementById('demo').onclick = funcao;*/
+
+        /*function funcao(){
+            alert('Opção alterada');
+        }
+        document.getElementById('demo').onclick = funcao;*/
+
+        function funcao1(elemento){
+            elemento.innerHTML = 'Ok, mouse sobre o elemento!';
+        }
+
+        function funcao2(elemento){
+            elemento.innerHTML = 'Passe o mouse aqui!';
+        }
+        
+    </script>
+
+</body>
+</html>

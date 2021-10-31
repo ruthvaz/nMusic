@@ -192,6 +192,44 @@ label[for="bt_menu"]{
     text-decoration: none;
 }
 
+/* Tabela de atividade */
+
+.table-atv {
+    margin: 2% 2%;
+    width: 96%;
+}
+
+.table-atv tr {
+    background: linear-gradient(to left, #8e2de2, #4a00e0);
+}
+
+.table-atv tr td, thead th {
+    width: 33.33%;
+    text-align: center;
+    padding: .8%;    
+}
+
+.table-atv tr td:first-child, thead th:first-child {
+    border-radius: 10px 0 0 10px;
+}
+
+.table-atv tr td:last-child, thead th:last-child {
+    border-radius: 0 10px 10px 0;
+}
+
+
+.table-atv tr td img {
+    height: 50px;
+    object-fit: cover;
+}
+
+.table-atv tr td a, th, td {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 26px;
+    color: white;
+    text-decoration: none;
+}
+
 /* Formulário de cadastro */
 
 #form-cadastro {

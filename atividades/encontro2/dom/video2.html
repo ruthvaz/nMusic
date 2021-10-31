@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM2</title>
+    <link rel="stylesheet" href="video2.css">
+    <style>
+        .zebrada{
+            background: silver;}
+    </style>
+</head>
+<body>
+
+    <table class="zebra">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Fone</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Alice</th>
+                <th>(xx)xxxxxxxxx</th>
+            </tr>
+            <tr>
+                <th>João</th>
+                <th>(xx)xxxxxxxxx</th>
+            </tr>
+            <tr>
+                <th>Maria</th>
+                <th>(xx)xxxxxxxxx</th>
+            </tr>
+            <tr>
+                <th>Luiz</th>
+                <th>(xx)xxxxxxxxx</th>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <script>
+        window.onload=function(){
+            var zebrar   = document.querySelectorAll('.zebra tbody tr');
+            for(var i=0; i<zebrar.length; i+=2){
+                zebrar[i].className = 'zebrada';
+            }
+        }
+    </script>
+    
+</body>
+</html>

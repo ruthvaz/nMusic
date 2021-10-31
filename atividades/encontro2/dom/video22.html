@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM22</title>
+</head>
+<body>
+
+    <div id="msg">
+
+    </div>
+
+    <!--<input type="button" value="Avançar" onclick="window.history.forward();"/>
+    <input type="button" value="Voltar" onclick="window.history.back();"/>-->
+
+    <!--<input type="button" value="Cancelar" onclick="clearTimeout(msg)"/>
+    <input type="button" value="Cancelar" onclick="clearInterval(msg)"/>-->
+
+    <script>
+        /*console.log(document);
+        console.log(window.location.href);
+        console.log(window);
+        window.history.back();
+        window.history.forward();*/   
+        //window.localStorage.setItem('nome', 'Alice');
+        //document.getElementById('msg').innerHTML = window.localStorage.getItem('nome');
+        //window.sessionStorage.setItem('nome2', 'Albert');
+        //document.getElementById('msg').innerHTML = window.sessionStorage.getItem('nome2');
+
+        var janela = window.open('', '', 'width=500, heigth=400');
+        janela.document.write('Texto');
+        janela.opener.document.write('Texto dois');
+
+        //setTimeout(function(){console.log('msg via timeout')}, 2000);
+
+        //var msg = setTimeout(msgtimeout, 5000);
+        //var msg = setInterval(msgtimeout, 2000);
+
+        var intervalo = setInterval(verificaFoco, 1000);
+        var contador = 0;
+        function verificaFoco(){
+            if(document.hasFocus()){
+                contador++;
+                console.log(contador);
+                if(contador >= 10){
+                    msgtimeout();
+                    clearInterval(intervalo);
+                }
+            }
+        }
+
+        function msgtimeout(){
+            //console.log('msg via timeout');
+            document.getElementById('msg').innerHTML = 'Obrigado!'
+        }
+
+
+        /*function msgtinterval(){
+            console.log('msg via interval');
+        }*/
+
+
+    </script>
+
+</body>
+</html>
