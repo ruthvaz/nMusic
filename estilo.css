@@ -257,6 +257,8 @@ label[for="bt_menu"]{
 
 #form-cadastro input:focus {
     border: none;
+    outline: 0;
+    border-bottom: 2px solid #d6c20d;
 }
 
 #form-cadastro button {
