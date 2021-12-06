@@ -12,35 +12,35 @@ class Validator {
       ]
     }
   
-    // inicia a validação de todos os campos
+    // Inicia a validação de todos os campos
     validate(form) {
   
-      // limpa todas as validações antigas
+      // Limpa todas as validações antigas
       let currentValidations = document.querySelectorAll('form .error-validation');
   
       if(currentValidations.length) {
         this.cleanValidations(currentValidations);
       }
   
-      // pegar todos inputs
+      // Pegar todos inputs
       let inputs = form.getElementsByTagName('input');
-      // transformar HTMLCollection em arr
+      // Transformar HTMLCollection em arr
       let inputsArray = [...inputs];
   
-      // loop nos inputs e validação mediante aos atributos encontrados
+      // Loop nos inputs e validação mediante aos atributos encontrados
       inputsArray.forEach(function(input, obj) {
   
-        // fazer validação de acordo com o atributo do input
+        // Faz validação de acordo com o atributo do input
         for(let i = 0; this.validations.length > i; i++) {
           if(input.getAttribute(this.validations[i]) != null) {
   
-            // limpa string para saber o método
+            // Limpa string para saber o método
             let method = this.validations[i].replace("data-", "").replace("-", "");
   
-            // valor do input
+            // Valor do input
             let value = input.getAttribute(this.validations[i])
   
-            // invoca o método
+            // Invoca o método
             this[method](input,value);
   
           }
@@ -50,7 +50,7 @@ class Validator {
   
     }
   
-    // método para validar se tem um mínimo de caracteres
+    // Método para validar se tem um mínimo de caracteres //
     minlength(input, minValue) {
   
       let inputLength = input.value.length;
@@ -63,7 +63,7 @@ class Validator {
   
     }
   
-    // método para validar se passou do máximo de caracteres
+    // Método para validar se passou do máximo de caracteres //
     maxlength(input, maxValue) {
   
       let inputLength = input.value.length;
@@ -76,7 +76,7 @@ class Validator {
   
     }
   
-    // método para validar strings que só contem letras
+    // Método para validar strings que contém apenas letras //
     onlyletters(input) {
   
       let re = /^[A-Za-z]+$/;;
@@ -98,7 +98,7 @@ class Validator {
   
       let email = input.value;
   
-      let errorMessage = `Insira um e-mail no padrão matheus@email.com`;
+      let errorMessage = `Insira um e-mail no padrão seunome@gmail.com`;
   
       if(!re.test(email)) {
         this.printMessage(input, errorMessage);

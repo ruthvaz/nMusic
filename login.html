@@ -45,8 +45,18 @@
             <h3>Entrar em Contato</h3>
             <input id="email" type="email" name="email" placeholder="Informe seu e-mail">
             <input id="senha" type="password" name="senha" placeholder="Informe sua senha">
-            <input type="submit" name="acao" value="Enviar">
+            <div class="g-recaptcha" data-sitekey=""></div>
+            <input type="submit" name="acao" value="Enviar" onclick="return valida()">
         </form>
+
+        <script type="text/javascript">
+            function valida() {
+                if(grecaptcha.getResponse() == "") {
+                    alert("Você precisa macar a validação!");
+                    return false;
+                }
+            }
+        </script>
 
 
         <script>
