@@ -1,10 +1,23 @@
+<?php
+
+require_once 'db_connect.php';
+
+session_start();
+
+if (!isset($_SESSION['logged'])) :
+    header('Location: index.html');
+endif;
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <title> nMusic </title>
     <link rel="stylesheet" href="estilo.css">
-    <link rel="icon" type="image/png" href="img/logo.png"/>
+    <link rel="icon" type="image/png" href="img/logo.png" />
 </head>
 
 <body style="background-color: #1f2021;" class="bg2">
@@ -15,25 +28,25 @@
     <nav class="menu">
         <ul>
             <li><a href="index.html"> Home </a></li>
-            <li><a href="generos.html"> Gêneros </a>
+            <li><a href="generos.php"> Gêneros </a>
                 <ul>
                     <li><a href="#"> Rock </a></li>
                     <li><a href="#"> Pop </a></li>
                     <li><a href="#"> Rap </a></li>
                 </ul>
             </li>
-            <li><a href="artistas.html"> Artistas </a>
+            <li><a href="artistas.php"> Artistas </a>
                 <ul>
                     <li><a href="#"> Beatles </a></li>
                     <li><a href="#"> Michael Jackson </a></li>
                     <li><a href="#"> Eminen </a></li>
                 </ul>
             </li>
-            <li><a href="radios.html"> Radios </a></li>
-            <li><a href="contato.html"> Contato </a></li>
-            <li><a href="login.html"> Login </a></li>
-            <li><a href="cadastro.html"> Cadastro </a></li>
-            <li><a href="atividades.html"> Atividades </a></li>
+            <li><a href="radios.php"> Radios </a></li>
+            <li><a href="contato.php"> Contato </a></li>
+            <li><a href="login.php"> Login </a></li>
+            <li><a href="atividades.php"> Atividades </a></li>
+            <li><a href="logout.php"> Sair </a></li>
         </ul>
     </nav>
 
@@ -47,4 +60,5 @@
     </table>
 
 </body>
+
 </html>
