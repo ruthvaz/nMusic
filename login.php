@@ -25,7 +25,7 @@ if (isset($_POST['send'])) :
                 $_SESSION['logged'] = true;
                 mysqli_close($connect);
                 header('Location: generos.php');
-            else:
+            else :
                 $errors[] = "<li> User and password don't match. </li>";
             endif;
 
@@ -51,6 +51,7 @@ endif;
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body style="background-color: #1f2021;" class="bg2">
@@ -87,22 +88,50 @@ endif;
         <h3>Entrar em Contato</h3>
         <input id="email" type="email" name="email" placeholder="Informe seu e-mail">
         <input id="senha" type="password" name="senha" placeholder="Informe sua senha">
-        <div class="g-recaptcha" data-sitekey=""></div>
+        <div class="g-recaptcha" data-sitekey="6Lf6CYMdAAAAAJ0-PYtu2qzlWGIj9UJ-qDTn0gNR"></div>
 
-        <input type="submit" name="send" value="Enviar">
+        <input type="submit" name="send" value="Enviar" onclick="return valida()">
         <!--<input type="submit" name="send" value="Enviar" onclick="return valida()">-->
     </form>
 
-    <!--
-        <script type="text/javascript">
-            function valida() {
-                if(grecaptcha.getResponse() == "") {
-                    alert("Você precisa macar a validação!");
-                    return false;
-                }
+
+    <script type="text/javascript">
+        function valida() {
+            if (grecaptcha.getResponse() == "") {
+                alert("Você precisa macar a validação!");
+                return false;
             }
-        </script>
-        -->
+        }
+    </script>
+
+    <?php
+
+    if(isset($_POST['send'])) {
+
+        if(!empty($_POST['g-recaptcha-response'])) {
+            $url = "https://www.google.com/recaptcha/api/siteverify";
+            $secret = "6Lf6CYMdAAAAAFlELh79zD5W-4VlSRwfZ_-MoTZY";
+            $response = $_POST['g-recaptcha-response'];
+            $variaveis = "secret=".$secret."&response=".$response;
+
+            $ch = curl_init($url);
+            curl_setopt( $ch, CURLOPT_POST, 1);
+            curl_setopt( $ch, CURLOPT_POSTFIELDS, $variaveis);
+            curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, 1);
+            curl_setopt( $ch, CURLOPT_HEADER, 0);
+            curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
+            
+            $resposta = curl_exec($ch);
+            $resultado = json_decode($resposta);
+
+            if($resultado->success == 1) {
+                echo "<br> Formulário enviado!";
+            }
+                
+        }
+    }
+
+    ?>
 
     <script>
         var email = document.getElementById('email');

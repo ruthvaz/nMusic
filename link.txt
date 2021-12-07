@@ -1,1 +1,3 @@
-https://nmusic.netlify.app/
+link do site: https://nmusica.000webhostapp.com/
+
+projeto front-end: https://nmusic.netlify.app/

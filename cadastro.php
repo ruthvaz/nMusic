@@ -23,6 +23,7 @@ session_destroy();
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body style="background-color: #1f2021;" class="bg2">
@@ -84,10 +85,50 @@ session_destroy();
                 <input type="checkbox" name="agreement" id="agreement">
                 <label for="agreement" id="agreement-label">Eu li e aceito os <a href="#">termos de uso</a></label>
             </div>
+            <div class="g-recaptcha" data-sitekey="6Lf6CYMdAAAAAJ0-PYtu2qzlWGIj9UJ-qDTn0gNR"></div>
+            
             <div class="full-box">
-                <input id="btn-submit" type="submit" value="Registrar" name="send">
+                <br>
+                <input id="btn-submit" type="submit" value="Registrar" name="send" onclick="return valida()">
             </div>
         </form>
+
+        <script type="text/javascript">
+            function valida() {
+                if (grecaptcha.getResponse() == "") {
+                    alert("Você precisa macar a validação!");
+                    return false;
+                }
+            }
+        </script>
+
+        <?php
+
+        if (isset($_POST['send'])) {
+
+            if (!empty($_POST['g-recaptcha-response'])) {
+                $url = "https://www.google.com/recaptcha/api/siteverify";
+                $secret = "6Lf6CYMdAAAAAFlELh79zD5W-4VlSRwfZ_-MoTZY";
+                $response = $_POST['g-recaptcha-response'];
+                $variaveis = "secret=" . $secret . "&response=" . $response;
+
+                $ch = curl_init($url);
+                curl_setopt($ch, CURLOPT_POST, 1);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, $variaveis);
+                curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+                curl_setopt($ch, CURLOPT_HEADER, 0);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+                $resposta = curl_exec($ch);
+                $resultado = json_decode($resposta);
+
+                if ($resultado->success == 1) {
+                    echo "<br> Formulário enviado!";
+                }
+            }
+        }
+
+        ?>
 
     </div>
 

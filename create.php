@@ -27,7 +27,7 @@ if (isset($_POST['send'])) :
 
         if (mysqli_query($connect, $sql)) :
             $_SESSION['mensagem'] = "Cadastrado com sucesso!";
-            header('Location: generos.html');
+            header('Location: generos.php');
             $_SESSION['logged'] = true;
         else :
             $_SESSION['mensagem'] = "Erro ao cadastrar!";
