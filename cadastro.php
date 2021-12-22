@@ -89,7 +89,8 @@ session_destroy();
             
             <div class="full-box">
                 <br>
-                <input id="btn-submit" type="submit" value="Registrar" name="send" onclick="return valida()">
+                <!-- <input id="btn-submit" type="submit" value="Registrar" name="send" onclick="return valida()"> -->
+                <input id="btn-submit" type="submit" value="Registrar" name="send">
             </div>
         </form>
 
@@ -104,7 +105,7 @@ session_destroy();
 
         <?php
 
-        if (isset($_POST['send'])) {
+        /*if (isset($_POST['send'])) {
 
             if (!empty($_POST['g-recaptcha-response'])) {
                 $url = "https://www.google.com/recaptcha/api/siteverify";
@@ -126,7 +127,7 @@ session_destroy();
                     echo "<br> Formulário enviado!";
                 }
             }
-        }
+        }*/
 
         ?>
 

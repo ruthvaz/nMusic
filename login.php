@@ -20,8 +20,8 @@ if (isset($_POST['send'])) :
             $dados = mysqli_fetch_array($result);
 
             if (password_verify($senha, $dados['senha'])) :
-                $data = mysqli_fetch_array($result);
-                $_SESSION['user'] = $data;
+                // $data = mysqli_fetch_array($result);
+                $_SESSION['user'] = $dados;
                 $_SESSION['logged'] = true;
                 mysqli_close($connect);
                 header('Location: generos.php');
@@ -90,8 +90,8 @@ endif;
         <input id="senha" type="password" name="senha" placeholder="Informe sua senha">
         <div class="g-recaptcha" data-sitekey="6Lf6CYMdAAAAAJ0-PYtu2qzlWGIj9UJ-qDTn0gNR"></div>
 
-        <input type="submit" name="send" value="Enviar" onclick="return valida()">
         <!--<input type="submit" name="send" value="Enviar" onclick="return valida()">-->
+        <input type="submit" name="send" value="Enviar">
     </form>
 
 
@@ -106,7 +106,7 @@ endif;
 
     <?php
 
-    if(isset($_POST['send'])) {
+    /*if(isset($_POST['send'])) {
 
         if(!empty($_POST['g-recaptcha-response'])) {
             $url = "https://www.google.com/recaptcha/api/siteverify";
@@ -129,7 +129,7 @@ endif;
             }
                 
         }
-    }
+    }*/
 
     ?>
 

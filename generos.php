@@ -43,8 +43,15 @@ endif;
             </li>
             <li><a href="radios.php"> Radios </a></li>
             <li><a href="contato.php"> Contato </a></li>
-            <li><a href="login.php"> Login </a></li>
             <li><a href="atividades.php"> Atividades </a></li>
+            <?php
+                
+                if($_SESSION['user']['tipo'] == "ADM"):
+                    echo "<li><a href=\"usuarios.php\"> Usuários </a></li>";
+                endif;
+                
+            ?>
+
             <li><a href="logout.php"> Sair </a></li>
         </ul>
     </nav>

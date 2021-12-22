@@ -23,12 +23,11 @@ if (isset($_POST['send'])) :
 
         $senha_segura = password_hash($senha, PASSWORD_DEFAULT);
 
-        $sql = "INSERT INTO `usuario`(`id`, `nome`, `email`, `sobrenome`, `senha`) VALUES (null, '$nome', '$email', '$sobrenome', '$senha_segura')";
+        $sql = "INSERT INTO `usuario`(`id`, `nome`, `email`, `sobrenome`, `senha`, `tipo`) VALUES (null, '$nome', '$email', '$sobrenome', '$senha_segura', 'USR')";
 
         if (mysqli_query($connect, $sql)) :
             $_SESSION['mensagem'] = "Cadastrado com sucesso!";
-            header('Location: generos.php');
-            $_SESSION['logged'] = true;
+            header('Location: login.php');
         else :
             $_SESSION['mensagem'] = "Erro ao cadastrar!";
             header('Location: cadastro.php');
